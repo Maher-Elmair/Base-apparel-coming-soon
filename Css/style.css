@@ -1,0 +1,313 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+/**
+*
+* Testing
+*
+**/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  width: 10px;
+  background-color: #c5c5c5;
+  border-left: 0 solid #ffffff;
+  border-right: 0 solid #ffffff;
+  margin-block: 3px;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ce9797;
+  width: 15% !important;
+  height: 15% !important;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar:hover {
+  cursor: pointer;
+}
+
+::-moz-selection {
+  /* code for firefox */
+  color: #ffffff;
+  background-color: #ce9797;
+}
+
+::selection {
+  /* code for firefox */
+  color: #ffffff;
+  background-color: #ce9797;
+}
+
+/* end variables */
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  /*small*/
+  /* tablet */
+  /* Medium */
+  /* desktop  */
+}
+@media (min-width: 577px) {
+  .container {
+    width: 550px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1300px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/*! start variables*/
+/*! end variables*/
+/*! start Global Rules*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  position: relative;
+}
+
+:root {
+  background-image: url(../images/bg-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*! end Global Rules*/
+/*! start code */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+@media (max-width: 768px) {
+  .container {
+    height: 120vh;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 440px) {
+  .container {
+    height: 115vh;
+  }
+}
+
+.app .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.app .content .images .img-desktop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  max-width: 50%;
+  height: 100%;
+}
+.app .content .images .img-desktop img {
+  height: 100%;
+}
+.app .content .images .img-mobile {
+  display: none;
+}
+@media (max-width: 768px) {
+  .app .content .images .img-desktop {
+    display: none;
+  }
+  .app .content .images .img-mobile {
+    margin: 40px 0;
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: inherit;
+  }
+  .app .content .images .img-mobile img {
+    width: 100%;
+    height: 300px;
+  }
+}
+.app .content .here {
+  margin: 120px auto;
+}
+.app .content .here .text {
+  max-width: 46%;
+}
+.app .content .here .text p:first-child {
+  margin: 20px auto;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: #413a3a;
+  font-size: 60px;
+  font-weight: 600;
+}
+.app .content .here .text p:first-child span {
+  color: #ce9797;
+  font-weight: 300;
+}
+.app .content .here .text p:last-child {
+  margin: 20px auto 40px;
+  color: #ce9797;
+  line-height: 1.5;
+  font-size: 16px;
+  font-weight: 400;
+}
+.app .content .here form {
+  display: flex;
+  align-items: flex-start;
+  align-content: space-between;
+}
+.app .content .here form input {
+  border-radius: 40px;
+  border: 1px solid #ceafaf;
+  padding: 15px 120px 15px 20px;
+  background-image: linear-gradient(135deg, #fff5f5, #ffffff);
+  color: #ce9797;
+  box-shadow: 0 0 6px 0px #e0c7c7;
+}
+.app .content .here form button {
+  border-radius: 40px;
+  position: relative;
+  border: none;
+  right: 40px;
+  padding: 15px 30px;
+  background-image: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+  color: #ffffff;
+  box-shadow: 0 0px 12px 0px #ceafaf;
+}
+.app .content .here form button:hover, .app .content .here form button:focus {
+  opacity: 0.8;
+  transform: scale(0.95);
+  cursor: pointer;
+}
+.app .content .here form .error {
+  border: 2px solid #f96262 !important;
+}
+.app .content .here form .error-text {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 12px;
+  font-style: italic;
+  color: #f96262;
+  margin: 10px 0px 10px 30px;
+}
+.app .content .here form .error-text::after {
+  font-family: "Font Awesome 6 Free";
+  content: "!";
+  font-weight: 700;
+  padding: 0 6px;
+}
+.app .content .here form .success {
+  border: 2px solid #ce9797 !important;
+}
+.app .content .here form .success-text {
+  display: flex;
+  justify-content: flex-start;
+  align-content: space-between;
+  font-size: 12px;
+  font-style: italic;
+  margin: 10px 30px;
+  color: #ce9797;
+}
+.app .content .here form .success-text::after {
+  font-family: "Font Awesome 6 Free";
+  content: "\f00c";
+  font-weight: 700;
+  padding: 0 6px;
+}
+@media (max-width: 768px) {
+  .app .content .here {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+  }
+}
+@media (max-width: 440px) {
+  .app .content .here .text {
+    max-width: 70%;
+  }
+  .app .content .here .text p:first-child {
+    font-size: 40px;
+  }
+  .app .content .here form input {
+    padding: 15px 40px 15px 20px;
+  }
+}
+@media (max-width: 360px) {
+  .app .content .here .text p:first-child {
+    font-size: 30px;
+  }
+  .app .content .here form input {
+    padding: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .app {
+    margin: 40px auto;
+  }
+  .app .logo img {
+    position: absolute;
+    top: 2.5%;
+    left: 10%;
+    width: 140px;
+  }
+}
+
+/*! start Attribution */
+.attribution {
+  position: absolute;
+  bottom: 0rem;
+  color: #413a3a;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 20px 0;
+  text-align: center;
+  width: -webkit-fill-available;
+}
+.attribution a {
+  font-size: smaller;
+  text-decoration: none;
+  color: #ce9797;
+  text-transform: capitalize;
+  font-size: 12px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.attribution a:hover::after {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 600;
+  content: "\f0a9";
+  font-size: 14px;
+  padding: 0 8px;
+}
+
+/*! end code *//*# sourceMappingURL=style.css.map */

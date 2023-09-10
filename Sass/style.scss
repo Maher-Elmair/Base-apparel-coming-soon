@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+// import file to media cwery
+@import "_breakpoints.scss";
+
+// import create Custom-Scrollbars-&-Selection-color
+@import "_Custom-Scrollbars-&-Selection-color.scss";
+
+// import containerScreen
+@import "_containerScreen.scss";
+/*! start variables*/
+
+$colorNormal: #ffffff;
+$colorHeading: #413a3a;
+$colorSubheading: #787887;
+$desaturated-red: #ce9797;
+$soft-red: #f96262;
+
+$light-gradient: linear-gradient(135deg, #fff5f5, #ffffff);
+
+$heavy-gradient: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+
+/*! end variables*/
+/*! start Global Rules*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Josefin Sans", sans-serif;
+  position: relative;
+}
+
+:root {
+  background-image: url(../images/bg-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/*! end Global Rules*/
+/*! start code */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  @include media("<=tablet") {
+    height: 120vh;
+    align-items: flex-start;
+  }
+  @include media("<=440px") {
+    height: 115vh;
+  }
+}
+.app {
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .images {
+      .img-desktop {
+        position: fixed;
+        top: 0;
+        right: 0;
+        max-width: 50%;
+        height: 100%;
+        img {
+          height: 100%;
+        }
+      }
+      .img-mobile {
+        display: none;
+      }
+      @include media("<=tablet") {
+        .img-desktop {
+          display: none;
+        }
+        .img-mobile {
+          margin: 40px 0;
+          display: block;
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: inherit;
+          img {
+            width: 100%;
+            height: 300px;
+          }
+        }
+      }
+    }
+    .here {
+      margin: 120px auto;
+      .text {
+        max-width: 46%;
+        p:first-child {
+          margin: 20px auto;
+          letter-spacing: 8px;
+          text-transform: uppercase;
+          color: $colorHeading;
+          font: {
+            size: 60px;
+            weight: 600;
+          }
+          span {
+            color: $desaturated-red;
+            font-weight: 300;
+          }
+        }
+        p:last-child {
+          margin: 20px auto 40px;
+          color: $desaturated-red;
+          line-height: 1.5;
+          font: {
+            size: 16px;
+            weight: 400;
+          }
+        }
+      }
+      form {
+        display: flex;
+        align-items: flex-start;
+        align-content: space-between;
+        input {
+          border-radius: 40px;
+          border: 1px solid #ceafaf;
+          padding: 15px 120px 15px 20px;
+          background-image: $light-gradient;
+          color: $desaturated-red;
+          box-shadow: 0 0 6px 0px #e0c7c7;
+        }
+        button {
+          border-radius: 40px;
+          position: relative;
+          border: none;
+          right: 40px;
+          padding: 15px 30px;
+          background-image: $heavy-gradient;
+          color: $colorNormal;
+          box-shadow: 0 0px 12px 0px #ceafaf;
+          &:hover,
+          &:focus {
+            opacity: 0.8;
+            transform: scale(0.95);
+            cursor: pointer;
+          }
+        }
+        .error {
+          border: 2px solid $soft-red !important;
+        }
+        .error-text {
+          display: flex;
+          justify-content: flex-start;
+          font-size: 12px;
+          font-style: italic;
+          color: $soft-red;
+          margin: 10px 0px 10px 30px;
+          &::after {
+            font-family: "Font Awesome 6 Free";
+            content: "\21";
+            font-weight: 700;
+            padding: 0 6px;
+          }
+        }
+        .success {
+          border: 2px solid $desaturated-red !important;
+        }
+        .success-text {
+          display: flex;
+          justify-content: flex-start;
+          align-content: space-between;
+          font-size: 12px;
+          font-style: italic;
+          margin: 10px 30px;
+          color: $desaturated-red;
+          &::after {
+            font-family: "Font Awesome 6 Free";
+            content: "\f00c";
+            font-weight: 700;
+            padding: 0 6px;
+          }
+        }
+      }
+      @include media("<=tablet") {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+      }
+      @include media("<=440px") {
+        .text {
+          max-width: 70%;
+          p:first-child {
+            font-size: 40px;
+          }
+        }
+        form {
+          input {
+            padding: 15px 40px 15px 20px;
+          }
+        }
+      }
+      @include media("<=phone") {
+        .text {
+          p:first-child {
+            font-size: 30px;
+          }
+        }
+        form {
+          input {
+            padding: 15px;
+          }
+        }
+      }
+    }
+  }
+  @include media("<=tablet") {
+    margin: 40px auto;
+    .logo {
+      img {
+        position: absolute;
+        top: 2.5%;
+        left: 10%;
+        width: 140px;
+      }
+    }
+  }
+}
+/*! start Attribution */
+.attribution {
+  position: absolute;
+  bottom: 0rem;
+  color: $colorHeading;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 20px 0;
+  text-align: center;
+  width: -webkit-fill-available;
+  a {
+    font-size: smaller;
+    text-decoration: none;
+    color: $desaturated-red;
+    text-transform: capitalize;
+    font-size: 12px;
+    font-weight: 400;
+    white-space: nowrap;
+    &:hover::after {
+      font-family: "Font Awesome 6 Free";
+      font-weight: 600;
+      content: "\f0a9";
+      font-size: 14px;
+      padding: 0 8px;
+    }
+  }
+}
+/*! end Attribution */
+
+/*! end code */
